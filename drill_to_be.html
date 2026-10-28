@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Дрилл TO BE — Фёдор, Т4</title>
+<style>
+  :root{--red:#c0392b;--green:#1e8449;--gray:#5d6d7e;--ink:#1c2833;--bg:#f4f6f7;--card:#ffffff;--accent:#1a5276}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+  .wrap{max-width:860px;margin:0 auto;padding:24px 16px 64px}
+  header{background:var(--accent);color:#fff;border-radius:14px;padding:22px 24px;margin-bottom:22px}
+  header h1{margin:0 0 6px;font-size:26px}
+  header p{margin:4px 0;font-size:14.5px;opacity:.92}
+  .tag{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:2px 12px;font-size:12.5px;margin:2px 6px 2px 0}
+  section{background:var(--card);border-radius:14px;padding:20px 22px;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+  h2{font-size:20px;margin:0 0 4px;color:var(--accent)}
+  .meta{font-size:13px;color:var(--gray);margin-bottom:14px}
+  ol.items{margin:0;padding-left:26px}
+  ol.items li{margin:9px 0;font-size:16.5px}
+  input.gap{width:74px;font-size:16px;padding:3px 8px;border:2px solid #b8c4ce;border-radius:8px;text-align:center;background:#fbfcfd}
+  input.gap:focus{outline:none;border-color:var(--accent)}
+  li.ok input.gap{border-color:var(--green);background:#eafaf1}
+  li.bad input.gap{border-color:var(--red);background:#fdedec}
+  .fb{font-size:13.5px;margin-left:8px}
+  .fb.ok{color:var(--green)} .fb.bad{color:var(--red)}
+  button{font-size:15px;padding:9px 18px;border:none;border-radius:9px;background:var(--accent);color:#fff;cursor:pointer;margin:6px 8px 0 0}
+  button.ghost{background:#fff;color:var(--accent);border:2px solid var(--accent)}
+  button:hover{filter:brightness(1.12)}
+  #score1{font-weight:700;margin-left:10px}
+  .sent{cursor:pointer;padding:8px 12px;border-radius:9px;border:1.5px dashed #cfd8dc;margin:8px 0;font-size:16.5px;background:#fbfcfd}
+  .sent:hover{border-color:var(--accent)}
+  .ans{display:none;margin-top:6px;font-size:15px;color:var(--green);font-weight:600}
+  .sent.open .ans{display:block}
+  .ans.none{color:var(--gray)}
+  .taskbox{border-left:5px solid var(--accent);background:#eaf2f8;border-radius:0 10px 10px 0;padding:12px 16px;margin:12px 0}
+  .rule{font-size:14px;color:var(--gray)}
+  details{background:#fdfefe;border:2px solid #d5dbdb;border-radius:12px;padding:12px 18px}
+  summary{cursor:pointer;font-weight:700;color:var(--accent);font-size:16px}
+  details table{border-collapse:collapse;width:100%;margin-top:10px;font-size:15px}
+  details td,details th{border:1px solid #d5dbdb;padding:7px 10px;text-align:left;vertical-align:top}
+  .badcell{color:var(--red)} .goodcell{color:var(--green);font-weight:600}
+  footer{font-size:12.5px;color:var(--gray);text-align:center;margin-top:8px}
+  @media print{body{background:#fff} section,header{box-shadow:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Дрилл: связка TO BE (am / is / are)</h1>
+  <p>Ученик: Фёдор · проект «Ways of Travelling» · цель: снять грубые ошибки <b>people ∅ afraid</b> и <b>its advantages is</b> до следующей записи Т4</p>
+  <span class="tag">10–12 минут в день</span><span class="tag">упр. 1–2 — письменно с самопроверкой</span><span class="tag">упр. 3 — устно, слушает учитель</span>
+</header>
+
+<section>
+  <h2>Упражнение 1. «Вставь связку»</h2>
+  <div class="meta">Впиши <b>am / is / are</b>. Если <i>to be</i> не нужен (есть смысловой глагол) — поставь <b>0</b>. Затем нажми «Проверить».</div>
+  <ol class="items" id="ex1">
+    <li data-acc="are">A lot of people <input class="gap" autocomplete="off"> afraid to fly by plane.<span class="fb"></span></li>
+    <li data-acc="is">Its main advantage <input class="gap" autocomplete="off"> that it is extremely fast.<span class="fb"></span></li>
+    <li data-acc="are">Its advantages <input class="gap" autocomplete="off"> that it is fast and comfortable.<span class="fb"></span></li>
+    <li data-acc="is">There <input class="gap" autocomplete="off"> a family at the railway station.<span class="fb"></span></li>
+    <li data-acc="is">There <input class="gap" autocomplete="off"> a man in front of the plane in the airport.<span class="fb"></span></li>
+    <li data-acc="are">Both pictures <input class="gap" autocomplete="off"> about two different ways of travelling.<span class="fb"></span></li>
+    <li data-acc="is">Travelling by train <input class="gap" autocomplete="off"> usually really long.<span class="fb"></span></li>
+    <li data-acc="am">I <input class="gap" autocomplete="off"> sure the choice is obvious.<span class="fb"></span></li>
+    <li data-acc="0|travels">The family <input class="gap" autocomplete="off"> (travel) by train every summer.<span class="fb"></span></li>
+    <li data-acc="0|go">You <input class="gap" autocomplete="off"> (go) to another city for a few days.<span class="fb"></span></li>
+    <li data-acc="are">We <input class="gap" autocomplete="off"> afraid of missing the train.<span class="fb"></span></li>
+    <li data-acc="is">The main drawback of the first way <input class="gap" autocomplete="off"> the time it takes.<span class="fb"></span></li>
+  </ol>
+  <button onclick="check1()">Проверить</button><button class="ghost" onclick="reset1()">Сброс</button><span id="score1"></span>
+  <div class="rule">Самопроверка-подсказка: связка обязательна, если дальше нет другого глагола в личной форме; есть смысловой глагол (travel, go) → 0.</div>
+</section>
+
+<section>
+  <h2>Упражнение 2. «Глаз эксперта»</h2>
+  <div class="meta">Найди ошибки со связкой <i>to be</i>. <b>Нажми на предложение</b> — откроется исправление. Три предложения без ошибок: отметь их мысленно ✔ до клика. Кнопки — показать/скрыть всё.</div>
+  <div id="ex2">
+    <div class="sent">1. A lot of people afraid to fly by plane.<div class="ans">→ A lot of people <b>ARE</b> afraid to fly by plane.</div></div>
+    <div class="sent">2. Its advantages is that it is extremely fast.<div class="ans">→ Its advantages <b>ARE</b> that it is extremely fast.</div></div>
+    <div class="sent">3. There is a family at the railway station.<div class="ans none">✔ Без ошибок.</div></div>
+    <div class="sent">4. The family is travel by train while the man is travel by plane.<div class="ans">→ The family <b>TRAVELS</b> … the man <b>TRAVELS</b> (лишняя связка при смысловом глаголе; или is travelling).</div></div>
+    <div class="sent">5. Both pictures is about travelling.<div class="ans">→ Both pictures <b>ARE</b> about travelling.</div></div>
+    <div class="sent">6. I am think the choice is obvious.<div class="ans">→ I <b>THINK</b> the choice is obvious (лишняя связка).</div></div>
+    <div class="sent">7. There are a man in front of the plane.<div class="ans">→ There <b>IS</b> a man in front of the plane.</div></div>
+    <div class="sent">8. Its main benefit is that it is cheap and comfortable.<div class="ans none">✔ Без ошибок.</div></div>
+    <div class="sent">9. Travelling by train are usually really long.<div class="ans">→ Travelling by train <b>IS</b> usually really long.</div></div>
+    <div class="sent">10. That's all for now. Bye.<div class="ans none">✔ Без ошибок.</div></div>
+  </div>
+  <button onclick="toggle2(true)">Показать всё</button><button class="ghost" onclick="toggle2(false)">Скрыть всё</button>
+</section>
+
+<section>
+  <h2>Упражнение 3. «Автопилот» — устно</h2>
+  <div class="meta">Интерактива нет: ответы слушает учитель на уроке или по записи на микрофон.</div>
+  <div class="taskbox">
+    <b>Часть A. «Три секунды».</b> Учитель читает русскую фразу — ответить вслух по-английски не позднее чем через 3 секунды; связку произнести <b>под ударением</b> (ARE / IS / AM слышно, а не проглочено).
+    <ol class="items">
+      <li>Многие люди боятся летать на самолёте.</li>
+      <li>Его главное преимущество — в том, что он дешёвый.</li>
+      <li>Его преимущества — в том, что он быстрый и удобный.</li>
+      <li>На первом фото есть семья на вокзале.</li>
+      <li>Обе фотографии — о путешествиях.</li>
+      <li>Я уверен: выбор очевиден.</li>
+      <li>Мы боимся опоздать на поезд.</li>
+      <li>Путешествие на поезде обычно очень долгое.</li>
+    </ol>
+  </div>
+  <div class="taskbox">
+    <b>Часть B. Запись одним дублем.</b> Продиктовать на микрофон пять фраз <b>без остановок и комментариев</b> (дисциплина дубля 4!):
+    <ol class="items">
+      <li>People ARE afraid to fly by plane.</li>
+      <li>Its advantages ARE speed and comfort.</li>
+      <li>There IS a family at the railway station.</li>
+      <li>I AM ready to record the final take.</li>
+      <li>That's all for now.</li>
+    </ol>
+    <b>Критерий зачёта:</b> во всех пяти фразах связка на месте и под ударением, ни одной остановки. Два зачёта подряд → чанк автоматизирован, переходим к следующему дублю Т4.
+  </div>
+</section>
+
+<details>
+  <summary>Ключи для учителя</summary>
+  <table>
+    <tr><th>Упр. 1</th><td>1 are · 2 is · 3 are · 4 is · 5 is · 6 are · 7 is · 8 am · 9 <b>0</b> (travels) · 10 <b>0</b> (go) · 11 are · 12 is</td></tr>
+    <tr><th>Упр. 2</th><td>1 ARE afraid · 2 ARE · 3 ✔ · 4 travels / is travelling · 5 ARE · 6 I think · 7 There IS · 8 ✔ · 9 IS · 10 ✔</td></tr>
+    <tr><th>Упр. 3A<br>(целевые фразы для слушания)</th><td>
+      1 A lot of people <b>ARE</b> afraid to fly by plane. · 2 Its main benefit <b>IS</b> that it is cheap. · 3 Its advantages <b>ARE</b> that it is fast and comfortable. ·
+      4 In the first photo there <b>IS</b> a family at the railway station. · 5 Both pictures <b>ARE</b> about travelling. · 6 I <b>AM</b> sure the choice is obvious. ·
+      7 We <b>ARE</b> afraid of missing the train. · 8 Travelling by train <b>IS</b> usually really long.</td></tr>
+    <tr><th>Карточка-напоминалка</th><td>Отдельный файл <b>card_to_be.png</b> — переслать Фёдору в телефон.</td></tr>
+  </table>
+</details>
+
+<footer>EGE Task 4 · drill pack · протокол EGE_T4_PROTOCOL.md (P20–P22) · сгенерировано 2026-10-28</footer>
+</div>
+<script>
+function norm(s){return s.trim().toLowerCase().replace(/[—\-–]/g,'0').replace(/\s+/g,' ');}
+function check1(){
+  var lis=document.querySelectorAll('#ex1 li'),good=0;
+  lis.forEach(function(li){
+    var inp=li.querySelector('input'),fb=li.querySelector('.fb');
+    var acc=li.getAttribute('data-acc').split('|').map(norm);
+    var v=norm(inp.value);
+    var zero=(v==='0'||v==='нет'||v==='none');
+    var okk=acc.indexOf(v)>=0||(acc.indexOf('0')>=0&&zero);
+    li.className=okk?'ok':'bad';
+    if(okk){good++;fb.textContent='✔';fb.className='fb ok';}
+    else{fb.textContent='✘ верно: '+li.getAttribute('data-acc').split('|')[0];fb.className='fb bad';}
+  });
+  document.getElementById('score1').textContent=good+' / '+lis.length;
+}
+function reset1(){
+  document.querySelectorAll('#ex1 li').forEach(function(li){
+    li.className='';li.querySelector('input').value='';li.querySelector('.fb').textContent='';
+  });
+  document.getElementById('score1').textContent='';
+}
+function toggle2(show){document.querySelectorAll('#ex2 .sent').forEach(function(s){s.classList.toggle('open',show);});}
+document.querySelectorAll('#ex2 .sent').forEach(function(s){s.addEventListener('click',function(){s.classList.toggle('open');});});
+</script>
+</body>
+</html>
